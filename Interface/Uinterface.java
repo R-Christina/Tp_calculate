@@ -1,6 +1,14 @@
-import javax.swing.*;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
 
 public class Uinterface extends JFrame 
 {
@@ -31,7 +39,7 @@ public class Uinterface extends JFrame
 
         //bouton action
         JButton btn = new JButton("Calculer");
-        btn.addActionListener(this::Calculer_delta);
+        //btn.addActionListener(this::Calculer_delta);
         JPanel south = new JPanel();
         south.add(btn);
         add(south, BorderLayout.SOUTH);
@@ -49,36 +57,43 @@ public class Uinterface extends JFrame
 //----------------------------------------------------------------------------
 
 //FUNCTION
+// ------------------------------------------------------------------------------
     //Function calculer operation delta secon degre
-    public void Calculer_delta(ActionEvent e) 
-    {
-        try {
-            double a = parseDouble(champ_a.getText());
-            double b = parseDouble(champ_b.getText());
-            double c = parseDouble(champ_c.getText());
-            double s = Verification_delta(double delta);
-            message_user.setText("Somme = " + s);
-        } 
-        catch (NumberFormatException ex) 
-        {
-            message_user.setText("Mauvaise saisi , saisir un nombre svp (ex. 12.5 ou 12,5)");
-        }
-    }
+
+    // public void Calculer_delta(ActionEvent e) 
+    // {
+    //     try 
+    //     {
+    //         double a = parseDouble(champ_a.getText());
+    //         double b = parseDouble(champ_b.getText());
+    //         double c = parseDouble(champ_c.getText());
+    //         double s = Verification_delta(double delta);
+    //         message_user.setText("Somme = " + s);
+    //     } 
+    //     catch (NumberFormatException ex) 
+    //     {
+    //         message_user.setText("Mauvaise saisi , saisir un nombre svp (ex. 12.5 ou 12,5)");
+    //     }
+    // }
+// -----------------------------------------------------------------------------
 
     // Function Parse text -> chiffre
-    public static double parseDouble(String text) 
-    {
-        if (text == null) throw new NumberFormatException("null");
-        String norm = text.trim().replace(',', '.');
-        if (norm.isEmpty()) throw new NumberFormatException("null");
-        return Double.parseDouble(norm);
-    }
 
+    // public static double parseDouble(String text) 
+    // {
+    //     if (text == null) throw new NumberFormatException("null");
+    //     String norm = text.trim().replace(',', '.');
+    //     if (norm.isEmpty()) throw new NumberFormatException("null");
+    //     return Double.parseDouble(norm);
+    // }
+
+//-----------------------------------------------------------------------------
     // Function verification delta : conditon
-    public static double Verification_delta(double delta) 
-    {
+
+    // public static double Verification_delta(double delta) 
+    // {
         
-    }
+    // }
 
 //======================================================
     //Main
