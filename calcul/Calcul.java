@@ -2,47 +2,50 @@ package calcul;
 
 public class Calcul {
 
-    private int a;
-    private int b;
-    private int c;
+    private int champ_a;
+    private int champ_b;
+    private int champ_c;
 
-    public Calcul(int a, int b, int c) {
-        this.a = a;
-        this.b = b;
-        this.c = c;
+    public Calcul(int champ_a, int champ_b, int champ_c) {
+        this.champ_a = champ_a;
+        this.champ_b = champ_b;
+        this.champ_c = champ_c;
     }
 
     public int getA() {
-        return a;
+        return champ_a;
     }
-    public void setA(int a) {
-        this.a = a;
+    public void setA(int champ_a) {
+        this.champ_a = champ_a;
     }
     public int getB() {
-        return b;
+        return champ_b;
     }
-    public void setB(int b) {
-        this.b = b;
+    public void setB(int champ_b) {
+        this.champ_b = champ_b;
     }
     public int getC() {
-        return c;
+        return champ_c;
     }
-    public void setC(int c) {
-        this.c = c;
+    public void setC(int champ_c) {
+        this.champ_c = champ_c;
     }
     
     public double[] calculSeconddegre()
     {
-        int delta = b*b-(4*a*c);
+        int delta = champ_b*champ_b-(4*champ_a*champ_c);
 
         if(delta>0){
-            double solution1 = (-b+Math.sqrt(delta))/(2.0*a);
-            double solution2 = (-b-Math.sqrt(delta))/(2.0*a);
+            double solution1 = (-champ_b+Math.sqrt(delta))/(2.0*champ_a);
+            double solution2 = (-champ_b-Math.sqrt(delta))/(2.0*champ_a);
+            System.out.println("deux solutions reels : x1 = " + solution1 + ", x2 = " + solution2);
             return new double[] {delta,solution1, solution2};
         } else if(delta==0){
-            double solution = -b/2*a;
+            double solution = -champ_b/2*champ_a;
+            System.out.println("une seule solution reelle : x = " + solution);
             return new double[] {delta,solution};
         } else{
+            System.out.println("aucune solution (delta < 0)");
              return null;
         }
     }
