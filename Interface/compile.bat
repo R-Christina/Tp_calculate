@@ -1,2 +1,2 @@
-javac Swing1.java
-java Swing1
+javac Uinterface.java
+java Uinterface
