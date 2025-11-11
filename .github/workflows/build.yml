@@ -18,6 +18,7 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '17'
+        distribution: 'temurin'
 
     - name: Compile Java files
       run: javac -d out calcul.Calcul.java uinterface/Uinterface.java
