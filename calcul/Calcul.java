@@ -50,7 +50,7 @@ public class Calcul
             return new double[] {delta, solution1, solution2};
         } else if(delta==0)
         {
-            double solution = -champB/2*champA;
+            double solution = -champB/2.0*champA;
             System.out.println("une seule solution reelle : x = " + solution);
             return new double[] {delta,solution};
         } else
