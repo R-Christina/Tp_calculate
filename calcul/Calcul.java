@@ -3,54 +3,54 @@ package calcul;
 public class Calcul 
 {
 
-    private int champ_a;
-    private int champ_b;
-    private int champ_c;
+    private int champA;
+    private int champB;
+    private int champC;
 
-    public Calcul(int champ_a, int champ_b, int champ_c) 
+    public Calcul(int champA, int champB, int champC) 
     {
-        this.champ_a = champ_a;
-        this.champ_b = champ_b;
-        this.champ_c = champ_c;
+        this.champA = champA;
+        this.champB = champB;
+        this.champC = champC;
     }
 
     public int getA() 
     {
-        return champ_a;
+        return champA;
     }
-    public void setA(int champ_a) 
+    public void setA(int champA) 
     {
-        this.champ_a = champ_a;
+        this.champA = champA;
     }
     public int getB() {
-        return champ_b;
+        return champB;
     }
-    public void setB(int champ_b) 
+    public void setB(int champB) 
     {
-        this.champ_b = champ_b;
+        this.champB = champB;
     }
     public int getC() 
     {
-        return champ_c;
+        return champC;
     }
-    public void setC(int champ_c) 
+    public void setC(int champC) 
     {
-        this.champ_c = champ_c;
+        this.champC = champC;
     }
     
     public double[] calculSeconddegre()
     {
-        int delta = champ_b*champ_b-(4*champ_a*champ_c);
+        int delta = champB*champB-(4*champA*champA);
 
         if(delta>0)
         {
-            double solution1 = (-champ_b+Math.sqrt(delta))/(2.0*champ_a);
-            double solution2 = (-champ_b-Math.sqrt(delta))/(2.0*champ_a);
+            double solution1 = (-champB+Math.sqrt(delta))/(2.0*champA);
+            double solution2 = (-champB-Math.sqrt(delta))/(2.0*champA);
             System.out.println("deux solutions reels : x1 = " + solution1 + ", x2 = " + solution2);
             return new double[] {delta, solution1, solution2};
         } else if(delta==0)
         {
-            double solution = -champ_b/2*champ_a;
+            double solution = -champB/2*champA;
             System.out.println("une seule solution reelle : x = " + solution);
             return new double[] {delta,solution};
         } else
